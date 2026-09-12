@@ -124,3 +124,4 @@ Since I am interested in physics, building this project gave me a chance to conn
 * maybe integrate with torch.optim if needed
 * flattening and unflattening gradients was a bit tricky but helped me understand how optimization works better
 * since I did not have a good GPU to run on, I tested on simple synthetic data to check that the optimizer works..
+* in an attempt to clean up messy draft history I republished the branch altogether, the code will include comments for further explanantion.
