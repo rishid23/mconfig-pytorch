@@ -1,6 +1,6 @@
 # mconfig-pytorch
 
-I have worked on this side project for the past couple days... It is based on the M-ConFIG method (Algorithm 1) from a paper called ConFIG, by Qiang Liu, Mengyu Chu, and Nils Thuerey, published at ICLR 2025. They came up with this to help train Physics-Informed Neural Networks (or PINNs) when gradients from different losses clash.
+Another loss mitigation algorithm implementation (my previous branch was had some merge conflicts so I commited everything that works on this new one all at once) It is based on the M-ConFIG method (Algorithm 1) from a paper called ConFIG, by Qiang Liu, Mengyu Chu, and Nils Thuerey, published at ICLR 2025. They came up with this to help train Physics-Informed Neural Networks (or PINNs) when gradients from different losses clash.
 
 It is specifically attempted and designed to optimize several losses at the same time, which happens a lot in PINNs. When the gradients from these losses point in different or conflicting directions, it can make training unnecessarily unstable or less effective, since whichever loss has the bigger gradient tends to dominate the update. M-ConFIG solves this by combining the gradients in a way that avoids the conflicts alltogether, and it does it while only backpropagating one loss per step instead of all of them at once, while using momentum to keep track of the others. This helps the model improve every loss together, more smoothly and more efficiently, without needing a full backward pass per loss every step.
 
